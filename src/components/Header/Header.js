@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { auth } from '../../firebase/Firebase';
 import './Header.scss';
+import CartIcon from '../CartIcon/CartIcon';
+import CartDropdown from '../CartDropdown/CartDropdown';
 const Header = (props) => {
   // console.log(props.currentUser);
   const renderContent = () => {
     if (!props.currentUser) {
-      console.log('here');
+      // console.log('here');
       return (
         <Link className="option" to="/signin">
           SIGN IN
@@ -20,6 +22,12 @@ const Header = (props) => {
         SIGN OUT
       </div>
     );
+  };
+  const renderCartDisplay = () => {
+    if (props.hidden) {
+      return;
+    }
+    return <CartDropdown />;
   };
   return (
     <div className="header">
@@ -34,13 +42,18 @@ const Header = (props) => {
           CONTACT
         </Link>
         {renderContent()}
+        <CartIcon />
       </div>
+      {renderCartDisplay()}
     </div>
   );
 };
 const mapStateToProps = (state) => {
-  console.log(state.user);
-  return { currentUser: state.user.currentUser };
+  // console.log(state.user);
+  return {
+    currentUser: state.user.currentUser,
+    hidden: state.cartDisplay.hidden,
+  };
 };
 
 export default connect(mapStateToProps)(Header);

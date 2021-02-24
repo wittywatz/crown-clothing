@@ -11,7 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import reducers from './redux/reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //For redux dev tools'
-const middlewares = [thunk];
+const middlewares = [thunk, logger];
 const store = createStore(
   reducers,
   {},
