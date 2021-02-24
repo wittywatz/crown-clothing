@@ -1,5 +1,5 @@
 import { ADD_ITEM_TO_CART, CART_DISPLAY_REDUCER } from '../actions/types';
-import { addItemToCart } from './cartUtility';
+import { addItemToCart } from './cart/cartUtility';
 
 const INITIAL_STATE = {
   hidden: true,
