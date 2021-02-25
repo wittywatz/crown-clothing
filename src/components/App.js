@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from '../firebase/Firebase';
 import { createStructuredSelector } from 'reselect';
 
@@ -40,25 +40,23 @@ class App extends Component {
     // console.log(this.state);
     return (
       <div className="App">
-        <BrowserRouter>
-          <Header />
-          <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/shop" exact component={ShopPage} />
-            <Route
-              path="/signin"
-              exact
-              render={() =>
-                this.props.currentUser ? (
-                  <Redirect to="/" />
-                ) : (
-                  <LoginRegisterPage />
-                )
-              }
-            />
-            <Route exact path="/checkout" component={CheckoutPage} />
-          </Switch>
-        </BrowserRouter>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route
+            path="/signin"
+            exact
+            render={() =>
+              this.props.currentUser ? (
+                <Redirect to="/" />
+              ) : (
+                <LoginRegisterPage />
+              )
+            }
+          />
+          <Route exact path="/checkout" component={CheckoutPage} />
+        </Switch>
       </div>
     );
   }

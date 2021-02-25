@@ -4,11 +4,14 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
 
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import reducers from './redux/reducers';
+import { BrowserRouter } from 'react-router-dom';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //For redux dev tools'
 const middlewares = [thunk, logger];
@@ -17,10 +20,14 @@ const store = createStore(
   {},
   composeEnhancers(applyMiddleware(...middlewares))
 );
-
+const persistor = persistStore(store);
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <PersistGate persistor={persistor}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );

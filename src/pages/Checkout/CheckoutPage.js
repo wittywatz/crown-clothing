@@ -10,7 +10,7 @@ import './Checkout.scss';
 
 const CheckoutPage = ({ items, total }) => {
   const renderContent = () => {
-    console.log(items);
+    // console.log(items);
     if (!items.length) {
       return (
         <span className="checkout-empty">

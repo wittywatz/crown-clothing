@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './MenuItem.scss';
 
-const MenuItem = ({ title, image }) => {
+const MenuItem = ({ title, image, linkUrl }) => {
   return (
     <div className="menu-item">
       <div
@@ -10,10 +11,10 @@ const MenuItem = ({ title, image }) => {
         }}
         className="background-image"
       />
-      <div className="content">
+      <Link to={linkUrl} className="content">
         <h1 className="title">{title}</h1>
         <span className="subtitle">SHOP NOW</span>
-      </div>
+      </Link>
     </div>
   );
 };
