@@ -14,7 +14,11 @@ import reducers from './redux/reducers';
 import { BrowserRouter } from 'react-router-dom';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //For redux dev tools'
-const middlewares = [thunk, logger];
+const middlewares = [thunk];
+if (process.env.NODE_ENV === 'development') {
+  middlewares.push(logger);
+}
+
 const store = createStore(
   reducers,
   {},
