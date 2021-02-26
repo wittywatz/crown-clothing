@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { auth, createUserProfileDocument } from '../firebase/Firebase';
+import {
+  auth,
+  createUserProfileDocument,
+  addCollectionAndDocuments,
+} from '../firebase/Firebase';
 import { createStructuredSelector } from 'reselect';
 
 import './App.css';
@@ -27,6 +31,13 @@ class App extends Component {
         userRef.onSnapshot((snapshot) => {
           // console.log(snapshot.data());
           this.props.fetchUser({ id: snapshot.id, ...snapshot.data() });
+          // addCollectionAndDocuments(
+          //   'collection',
+          //   this.props.collectionsForPreview.map(({ title, items }) => ({
+          //     title,
+          //     items,
+          //   }))
+          // );
         });
       } else {
         this.props.fetchUser(userAuth);
