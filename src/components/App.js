@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import {
-  auth,
-  createUserProfileDocument,
-  addCollectionAndDocuments,
-} from '../firebase/Firebase';
+import { auth, createUserProfileDocument } from '../firebase/Firebase';
 import { createStructuredSelector } from 'reselect';
 
 import './App.css';
