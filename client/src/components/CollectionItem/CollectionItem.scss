@@ -5,6 +5,8 @@
   height: 22rem;
   align-items: center;
   position: relative;
+  margin-bottom: 20px;
+  padding: 5px;
 
   .image {
     width: 100%;
@@ -20,8 +22,7 @@
     position: absolute;
     margin-top: 16rem;
     display: none;
-    @media (max-width: 800px) {
-    }
+
     display: block;
     opacity: 0.9;
     min-width: unset;
