@@ -35,6 +35,9 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
   });
 }
+app.get('/service-worker.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'service-worker.js'));
+});
 
 app.listen(process.env.PORT, (error) => {
   if (error) {
