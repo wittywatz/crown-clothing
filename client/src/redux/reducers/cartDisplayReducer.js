@@ -2,6 +2,7 @@ import {
   ADD_ITEM_TO_CART,
   CART_DISPLAY_REDUCER,
   DECREASE_CART_ITEM,
+  REMOVE_ALL_CART_ITEMS,
   REMOVE_CART_ITEM,
 } from '../actions/types';
 import { addItemToCart, removeItemFromCart } from './cart/cartUtility';
@@ -30,6 +31,8 @@ export const cartDisplayReducer = (state = INITIAL_STATE, action) => {
         ...state,
         addItem: removeItemFromCart(state.addItem, action.payload),
       };
+    case REMOVE_ALL_CART_ITEMS:
+      return { ...state, addItem: [] };
     default:
       return state;
   }

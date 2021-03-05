@@ -9,6 +9,15 @@
   margin: 0 0.5rem 1rem;
   overflow: hidden;
 
+  @media (max-width: 738px) {
+    min-width: 50%;
+    height: 15rem;
+    margin: 0 0.5rem 0.5rem;
+  }
+  @media (max-width: 738px) {
+    min-width: none;
+    height: 15rem;
+  }
   &:hover {
     cursor: pointer;
     & .background-image {
@@ -42,6 +51,10 @@
     background-color: white;
     opacity: 0.7;
     position: absolute;
+    @media (max-width: 506px) {
+      height: 6rem;
+      padding: 0 2rem 0.5rem;
+    }
 
     .title {
       font-weight: bold;
@@ -57,3 +70,10 @@
     }
   }
 }
+
+// @media (max-width: 506px) {
+//   .title {
+//     font-size: 10rem;
+//     margin-bottom: 0.2rem;
+//   }
+// }

@@ -34,5 +34,8 @@
     padding-left: 12px;
     cursor: pointer;
     color: rgb(190, 34, 34);
+    @media (max-width: 800) {
+      padding-left: 6px;
+    }
   }
 }

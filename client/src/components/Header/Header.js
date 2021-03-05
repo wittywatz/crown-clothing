@@ -41,9 +41,7 @@ const Header = (props) => {
         <Link className="option" to="/shop">
           SHOP
         </Link>
-        <Link className="option" to="/shop">
-          CONTACT
-        </Link>
+
         {renderContent()}
         <CartIcon />
       </div>

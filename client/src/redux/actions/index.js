@@ -5,6 +5,7 @@ import {
   DECREASE_CART_ITEM,
   FETCH_COLLECTIONS,
   FETCH_USER,
+  REMOVE_ALL_CART_ITEMS,
   REMOVE_CART_ITEM,
 } from './types';
 //USERS
@@ -29,7 +30,9 @@ export const DecreaseItem = (item) => ({
   type: DECREASE_CART_ITEM,
   payload: item,
 });
-
+export const RemoveAllCartItems = () => ({
+  type: REMOVE_ALL_CART_ITEMS,
+});
 //Shop Collections
 export const fetchCollections = (collections) => ({
   type: FETCH_COLLECTIONS,

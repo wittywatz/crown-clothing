@@ -4,11 +4,20 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.5rem;
-
+  @media (max-width: 699px) {
+    height: 2.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
   .logo-container {
     height: 100%;
     width: 4.5rem;
     padding: 1.5rem;
+    @media (max-width: 699px) {
+      width: 2rem;
+      padding: 0 0 0 1rem;
+      margin-bottom: 1rem;
+    }
   }
   .options {
     width: 50%;
@@ -16,10 +25,18 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @media (max-width: 699px) {
+      width: 80%;
+      padding-top: 1.2rem;
+    }
 
     .option {
       padding: 0.7rem 0.9rem;
       cursor: pointer;
+      @media (max-width: 699px) {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+      }
     }
   }
 }

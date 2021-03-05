@@ -20,6 +20,12 @@
     position: absolute;
     margin-top: 16rem;
     display: none;
+    @media (max-width: 800px) {
+    }
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
   }
 
   &:hover {
@@ -46,6 +52,19 @@
     .price {
       width: 15%;
       // margin-bottom: 1rem;
+    }
+  }
+  @media (max-width: 800px) {
+    // height: 15rem;
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      .custom-button {
+        opacity: unset;
+      }
     }
   }
 }
