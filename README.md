@@ -16,9 +16,13 @@ cd client && npm install
 cd .. && npm run dev
 
 ## Extra concerns
+Create an account on Stripe.com 
+
+Go to the developers section to get your publishable and secret keys
+
 In the client folder, locate the StripeButton.js file under src/components and paste in your publishable STRIPE API key
 
-While in the root folder(crown-clothing), create a .env file
+While in the root folder(crown-clothing), create a .env file to have PORT and STRIPE_SECRET_KEY as seen below. 
 
 PORT=5000 
 
