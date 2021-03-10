@@ -16,7 +16,7 @@ cd client && npm install
 cd .. && npm run dev
 
 ## Extra concerns
-Create an account on Stripe.com 
+Create an account on https://stripe.com 
 
 Go to the developers section to get your publishable and secret keys
 
